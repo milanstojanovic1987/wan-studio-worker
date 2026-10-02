@@ -32,9 +32,9 @@ The desktop app needs a published worker image. This repository includes `.githu
 
 1. Put this folder in a GitHub repository.
 2. Push to `main` or manually run **Build Wan Studio worker** in GitHub Actions.
-3. The image will be `ghcr.io/YOUR_GITHUB_USERNAME/wan-studio-worker:latest`.
+3. The image is `ghcr.io/milanstojanovic1987/wan-studio-worker:latest`.
 4. Make the GHCR package public (or configure RunPod registry credentials for a private image).
-5. In Wan Studio → **Settings**, replace the placeholder worker image with the real image name.
+5. Wan Studio → **Settings** defaults to this published worker image.
 
 No Docker installation on the Windows PC is required.
 

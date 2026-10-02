@@ -8,7 +8,7 @@ from pathlib import Path
 
 @dataclass
 class Settings:
-    worker_image: str = "ghcr.io/YOUR_GITHUB_USERNAME/wan-studio-worker:latest"
+    worker_image: str = "ghcr.io/milanstojanovic1987/wan-studio-worker:latest"
     gpu_id: str = "NVIDIA A100 80GB PCIe"
     cloud: str = "COMMUNITY"
     disk_gb: int = 200
