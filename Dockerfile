@@ -17,7 +17,8 @@ RUN git clone --depth 1 https://github.com/Wan-Video/Wan2.2.git /opt/Wan2.2 && \
     grep -v '^flash_attn' /opt/Wan2.2/requirements.txt > /tmp/wan-requirements.txt && \
     python -m pip install --no-cache-dir -r /tmp/wan-requirements.txt && \
     python -m pip install --no-cache-dir -r /opt/Wan2.2/requirements_s2v.txt && \
-    python -m pip install --no-cache-dir flash-attn --no-build-isolation
+    python -m pip install --no-cache-dir flash-attn --no-build-isolation && \
+    rm -rf /root/.cache/pip /tmp/*
 
 ENV PYTHONPATH=/opt/wan-studio
 EXPOSE 8000
