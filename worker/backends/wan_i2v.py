@@ -34,7 +34,7 @@ class Wan22LightningBackend(Backend):
             from diffusers import WanImageToVideoPipeline, WanTransformer3DModel
 
             model_id = os.getenv("WAN_MODEL_ID", "Wan-AI/Wan2.2-I2V-A14B-Diffusers")
-            transformer_id = os.getenv("WAN_TRANSFORMER_ID", "cbensimon/Wan2.2-I2V-A14B-bf16-Diffusers")
+            transformer_id = os.getenv("WAN_TRANSFORMER_ID", "Wan-AI/Wan2.2-I2V-A14B-Diffusers")
             high = WanTransformer3DModel.from_pretrained(transformer_id, subfolder="transformer", torch_dtype=torch.bfloat16)
             low = WanTransformer3DModel.from_pretrained(transformer_id, subfolder="transformer_2", torch_dtype=torch.bfloat16)
             pipe = WanImageToVideoPipeline.from_pretrained(model_id, transformer=high, transformer_2=low, torch_dtype=torch.bfloat16)
