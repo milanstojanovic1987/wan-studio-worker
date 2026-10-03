@@ -3,11 +3,16 @@ FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     HF_HOME=/workspace/.cache/huggingface \
+    HF_HUB_ENABLE_HF_TRANSFER=0 \
+    HF_HUB_DISABLE_XET=1 \
+    HF_XET_HIGH_PERFORMANCE=0 \
+    HF_HUB_ETAG_TIMEOUT=60 \
+    HF_HUB_DOWNLOAD_TIMEOUT=600 \
     STUDIO_JOB_ROOT=/workspace/studio_jobs \
-    WAN_REPO=/opt/Wan2.2
+    WAN_REPO=/opt/Wan2.2 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        git ffmpeg build-essential ninja-build \
+        git ffmpeg build-essential ninja-build ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
 
 # The RunPod base image can contain a FlashAttention extension compiled against
